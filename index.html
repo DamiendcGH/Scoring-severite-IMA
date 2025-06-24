@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Évaluation d'Impact d'Incident</title>
+    <title>Évaluation de l'impact d'un incident majeur</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -227,7 +227,7 @@
     </style>
 </head>
 <body>
-    <h1>Évaluation d'Impact d'Incident</h1>
+    <h1>Évaluation de l'impact d'un incident majeur</h1>
     <form id="impactForm">
         <!-- Catégorie 1 : Impact Business (🟥) -->
         <div class="category business">
@@ -236,31 +236,31 @@
                 <label for="q1_1">Q1.1 Estimation des pertes de réservations :</label>
                 <select id="q1_1">
                     <option value="none">Aucune perte</option>
-                    <option value="SEV1">[SEV1] >200k€</option>
-                    <option value="SEV2">[SEV2] 50-200k€</option>
-                    <option value="SEV3">[SEV3] <50k€</option>
+                    <option value="SEV1">>200k €</option>
+                    <option value="SEV2">50 - 200k €</option>
+                    <option value="SEV3"><50k €</option>
                 </select>
-                <div class="note">Note : Se base sur le montant brut des réservations perdues ou à rembourser.</div>
+                <div class="note">Note : Se base sur le montant brut des réservations perdues.</div>
             </div>
             <div class="question">
                 <label for="q1_2">Q1.2 Hôtels impactés :</label>
                 <select id="q1_2">
                     <option value="none">Aucun hôtel impacté</option>
-                    <option value="SEV1">[SEV1] >200 hôtels</option>
-                    <option value="SEV2">[SEV2] 50-200 hôtels</option>
-                    <option value="SEV3">[SEV3] <50 hôtels</option>
+                    <option value="SEV1">>200 hôtels</option>
+                    <option value="SEV2">50-200 hôtels</option>
+                    <option value="SEV3"><50 hôtels</option>
                 </select>
-                <div class="note">Note : Inclut les hôtels avec données erronées ou impossibilité de recevoir des réservations.</div>
+                <div class="note">Note : Nombre d’hôtels affectés par des erreurs de données, des blocages de réservation, des mises à jour incorrectes, etc.</div>
             </div>
             <div class="question">
                 <label for="q1_3">Q1.3 Risque légal/conformité :</label>
                 <select id="q1_3">
                     <option value="none">Aucun risque</option>
-                    <option value="SEV1">[SEV1] RGPD/PCI/overbooking</option>
-                    <option value="SEV2">[SEV2] SLA partenaire compromis</option>
-                    <option value="SEV3">[SEV3] Risque mineur</option>
+                    <option value="SEV1">RGPD/PCI/overbooking</option>
+                    <option value="SEV2">SLA partenaire compromis</option>
+                    <option value="SEV3">Risque mineur</option>
                 </select>
-                <div class="note">Note : Cochez "Aucun risque" si l'incident est purement technique sans implication légale.</div>
+                <div class="note">Note : Cochez "Aucun risque" si l’incident est uniquement technique, sans impact légal.</div>
             </div>
         </div>
 
@@ -271,31 +271,31 @@
                 <label for="q2_1">Q2.1 Clients affectés :</label>
                 <select id="q2_1">
                     <option value="none">Aucun client touché</option>
-                    <option value="SEV1">[SEV1] >10% ou région clé</option>
-                    <option value="SEV2">[SEV2] Segment spécifique</option>
-                    <option value="SEV3">[SEV3] Cas isolés</option>
+                    <option value="SEV1">>10% ou région clé</option>
+                    <option value="SEV2">Segment spécifique</option>
+                    <option value="SEV3">Cas isolés</option>
                 </select>
-                <div class="note">Note : Estimez la proportion d'utilisateurs incapables de réserver normalement.</div>
+                <div class="note">Note : Estimez la proportion d'utilisateurs impactés par l'incident</div>
             </div>
             <div class="question">
                 <label for="q2_2">Q2.2 Dégradation du service :</label>
                 <select id="q2_2">
                     <option value="none">Aucun impact</option>
-                    <option value="SEV1">[SEV1] Réservation impossible</option>
-                    <option value="SEV2">[SEV2] Ralentissements/paiements échoués</option>
-                    <option value="SEV3">[SEV3] Bugs mineurs</option>
+                    <option value="SEV1">Réservation impossible</option>
+                    <option value="SEV2">Ralentissements/paiements échoués</option>
+                    <option value="SEV3">Bugs mineurs</option>
                 </select>
-                <div class="note">Note : Évaluez l'impact sur le parcours client, pas la cause technique.</div>
+                <div class="note">Note : Évaluez l'impact sur le parcours client.</div>
             </div>
             <div class="question">
                 <label for="q2_3">Q2.3 Satisfaction client :</label>
                 <select id="q2_3">
                     <option value="none">Aucun changement</option>
-                    <option value="SEV1">[SEV1] Plaintes massives</option>
-                    <option value="SEV2">[SEV2] Hausse des tickets</option>
-                    <option value="SEV3">[SEV3] Impact mineur</option>
+                    <option value="SEV1">Plaintes massives</option>
+                    <option value="SEV2">Hausse des tickets</option>
+                    <option value="SEV3">Impact mineur</option>
                 </select>
-                <div class="note">Note : Consultez l'équipe Support pour les données quantitatives.</div>
+                <div class="note">Note : Consultez les équipes Support pour les données quantitatives.</div>
             </div>
         </div>
 
@@ -306,31 +306,31 @@
                 <label for="q3_1">Q3.1 Outils internes :</label>
                 <select id="q3_1">
                     <option value="none">Tout fonctionne</option>
-                    <option value="SEV1">[SEV1] CRM/portail down</option>
-                    <option value="SEV2">[SEV2] Fonctionnalités réduites</option>
-                    <option value="SEV3">[SEV3] Problèmes cosmétiques</option>
+                    <option value="SEV1">CRM/portail down</option>
+                    <option value="SEV2">Fonctionnalités réduites</option>
+                    <option value="SEV3">Problèmes cosmétiques</option>
                 </select>
-                <div class="note">Note : Ne concerne que les outils critiques (hors monitoring technique).</div>
+                <div class="note">Note : Ne concerne que les outils sensibles ou nécessitant une haute disponibilité.</div>
             </div>
             <div class="question">
                 <label for="q3_2">Q3.2 Charge du support :</label>
                 <select id="q3_2">
                     <option value="none">Opérations normales</option>
-                    <option value="SEV1">[SEV1] Pic de tickets + processus manuels</option>
-                    <option value="SEV2">[SEV2] Charge accrue</option>
-                    <option value="SEV3">[SEV3] Impact mineur</option>
+                    <option value="SEV1">Pic de tickets + processus manuels</option>
+                    <option value="SEV2">Charge accrue</option>
+                    <option value="SEV3">Impact mineur</option>
                 </select>
-                <div class="note">Note : Se base sur le volume de tickets et les processus exceptionnels.</div>
+                <div class="note">Note : Se base sur le volume de tickets en augmentation lors de l'incident.</div>
             </div>
             <div class="question">
                 <label for="q3_3">Q3.3 Outils B2B :</label>
                 <select id="q3_3">
                     <option value="none">Rien à signaler</option>
-                    <option value="SEV1">[SEV1] Extranet down</option>
-                    <option value="SEV2">[SEV2] Instabilités</option>
-                    <option value="SEV3">[SEV3] Dégradation mineure</option>
+                    <option value="SEV1">Extranet down</option>
+                    <option value="SEV2">Instabilités</option>
+                    <option value="SEV3">Dégradation mineure</option>
                 </select>
-                <div class="note">Note : Vérifier auprès de l'équipe Partenaires si nécessaire.</div>
+                <div class="note">Note : Vérifier auprès des équipes Partenaires si nécessaire.</div>
             </div>
         </div>
 
@@ -341,19 +341,19 @@
                 <label for="q4_1">Q4.1 Visibilité publique :</label>
                 <select id="q4_1">
                     <option value="none">Non visible</option>
-                    <option value="SEV1">[SEV1] Médias/réseaux sociaux</option>
-                    <option value="SEV2">[SEV2] Signalements clients directs</option>
-                    <option value="SEV3">[SEV3] Discussion interne</option>
+                    <option value="SEV1">Médias/réseaux sociaux</option>
+                    <option value="SEV2">Signalements clients directs</option>
+                    <option value="SEV3">Discussion interne</option>
                 </select>
-                <div class="note">Note : Surveiller les canaux publics et internes pendant 1h après détection.</div>
+                <div class="note">Note : Surveiller les canaux publics et internes.</div>
             </div>
             <div class="question">
                 <label for="q4_2">Q4.2 Partenaires stratégiques :</label>
                 <select id="q4_2">
                     <option value="none">Aucun impact</option>
-                    <option value="SEV1">[SEV1] Grands groupes</option>
-                    <option value="SEV2">[SEV2] Partenaires intermédiaires</option>
-                    <option value="SEV3">[SEV3] Petits partenaires</option>
+                    <option value="SEV1">Grands groupes</option>
+                    <option value="SEV2">Partenaires intermédiaires</option>
+                    <option value="SEV3">Petits partenaires</option>
                 </select>
                 <div class="note">Note : Prioriser les partenaires générant >5% du chiffre d'affaires.</div>
             </div>
@@ -361,11 +361,11 @@
                 <label for="q4_3">Q4.3 Risque cyber :</label>
                 <select id="q4_3">
                     <option value="none">Aucune menace</option>
-                    <option value="SEV1">[SEV1] DDoS/phishing massif</option>
-                    <option value="SEV2">[SEV2] Incident ciblé</option>
-                    <option value="SEV3">[SEV3] Alerte mineure</option>
+                    <option value="SEV1">DDoS/phishing massif</option>
+                    <option value="SEV2">Incident ciblé</option>
+                    <option value="SEV3">Alerte mineure</option>
                 </select>
-                <div class="note">Note : Implique systématiquement l'équipe Cybersécurité si SEV1/SEV2.</div>
+                <div class="note">Note : Voir avec les équipes de Cybersécurité.</div>
             </div>
         </div>
 
@@ -376,9 +376,9 @@
                 <label for="q5_1">Q5.1 Commissions/frais :</label>
                 <select id="q5_1">
                     <option value="none">Aucun impact</option>
-                    <option value="SEV1">[SEV1] Pertes majeures</option>
-                    <option value="SEV2">[SEV2] Pertes modérées</option>
-                    <option value="SEV3">[SEV3] Impact marginal</option>
+                    <option value="SEV1">Pertes majeures</option>
+                    <option value="SEV2">Pertes modérées</option>
+                    <option value="SEV3">Impact marginal</option>
                 </select>
                 <div class="note">Note : Inclut les pénalités contractuelles et frais exceptionnels.</div>
             </div>
