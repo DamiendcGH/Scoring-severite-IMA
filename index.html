@@ -218,6 +218,12 @@
             border-radius: 5px;
             background: #2c3e50;
         }
+        
+        .question-points {
+            font-size: 0.8em;
+            color: #666;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -457,6 +463,8 @@
         const questionResults = category.questions.map(q => {
             const value = document.getElementById(q.id).value;
             const points = severityValues[value];
+            const questionWeight = category.weight / category.questions.length;
+            const weightedPoints = points * questionWeight;
             
             // Détermine la sévérité max
             if (value !== "none") {
@@ -472,17 +480,19 @@
                 id: q.id,
                 label: q.label,
                 value: value,
-                points: points
+                points: points,
+                weightedPoints: weightedPoints
             };
         }).filter(q => q.value !== "none");
 
         if (questionResults.length === 0) return null;
 
-        // Calcule le score de la catégorie (moyenne des questions)
-        const averageScore = questionResults.reduce((sum, q) => sum + q.points, 0) / category.questions.length;
-        categoryScore = averageScore * category.weight;
+        // Calcule le score de la catégorie (somme des questions pondérées)
+        categoryScore = questionResults.reduce((sum, q) => sum + q.weightedPoints, 0);
 
         return {
+            name: category.name,
+            emoji: category.emoji,
             severity: maxSeverity,
             questions: questionResults,
             score: categoryScore,
@@ -556,10 +566,14 @@
             
             // Ajout des détails par question
             category.questions.forEach(q => {
+                const pointsPercentage = Math.round(q.weightedPoints / (category.maxPossibleScore / category.questions.length) * 100);
                 html += `
                     <div class="question-result">
                         <span class="question-label">${q.label}</span>
-                        <span class="severity-badge ${q.value}">${q.value}</span>
+                        <span>
+                            <span class="severity-badge ${q.value}">${q.value}</span>
+                            <span class="question-points">(${pointsPercentage}%)</span>
+                        </span>
                     </div>`;
             });
             
